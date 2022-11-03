@@ -2,7 +2,7 @@ body {
 	font-family: Inter, sans-serif;
 	min-height: 100vh;
 	margin: 0;
-	background-color: #121212;
+	background-color: #b8b8b8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,10 +16,22 @@ body {
 }
 
 nav {
+	position: relative;
 	display: flex;
 	align-items: center;
-	background-color: #21222A;
+	background-color: #ffffff;
 	padding: 30px 25px;
+	z-index: 1;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav.dark {
+	background-color: #21222A;
+}
+
+.nav--logo_icon {
+	width: 30px;
+	margin-right: 10px;
 }
 
 .nav--icon {
@@ -39,14 +51,84 @@ nav {
 	font-weight: 600;
 }
 
+/* TOGGLE */
+.toggler {
+	display: flex;
+	align-items: center;
+}
+
+.toggler p {
+	font-size: 0.625rem;
+	font-weight: 600;
+}
+
+.toggler--slider {
+	padding: 1px;
+	width: 25px;
+	height: 13px;
+	background-color: #2B283A;
+	border-radius: 2rem;
+	margin-inline: 7px;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border: 1px solid black;
+	box-sizing: content-box;
+}
+
+nav.dark .toggler--slider {
+	border-color: white;
+	background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+	height: 13px;
+	width: 13px;
+	background-color: white;
+	border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+	background-color: black;
+}
+
+.toggler--light {
+	color: #2B283A;
+}
+
+nav.dark .toggler--light {
+	color: #918E9B;
+}
+
+.toggler--dark {
+	color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+	color: #FFFFFF;
+}
+
+nav.dark .toggler--slider {
+	justify-content: flex-end;
+}
+
+/* MAIN */
+
 main {
-	background-color: #282D35;
-	background-image: url(./images/react-bg.png);
+	background-color: white;
+	color: #2B283A;
+	background-image: url(./images/react-icon-light.png);
 	background-repeat: no-repeat;
 	background-position: right 75%;
 	background-size: 130px;
-	color: #FFFFFF;
 	padding: 57px 27px;
+}
+
+main.dark {
+	background-image: url("./images/react-icon-dark.png");
+	background-color: #282D35;
+	color: white;
 }
 
 .main--title {
@@ -69,6 +151,8 @@ main {
 	font-size: 1.4rem;
 	color: #61DAFB;
 }
+
+
 
 @media (max-width:430px) {
 	nav {
